@@ -1,7 +1,6 @@
 package com.node.vo;
 
-import com.node.entity.Node;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class NodeVO {
@@ -11,7 +10,7 @@ public class NodeVO {
     private String description;
     private Integer parentId;
     private String detail;
-    private List<Node> children;
+    private List<NodeVO> children = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -53,11 +52,15 @@ public class NodeVO {
         this.detail = detail;
     }
 
-    public List<Node> getChildren() {
+    public List<NodeVO> getChildren() {
         return children;
     }
 
-    public void setChildren(List<Node> children) {
+    public void setChildren(List<NodeVO> children) {
         this.children = children;
+    }
+
+    public void addChild(NodeVO child) {
+        this.children.add(child);
     }
 }
