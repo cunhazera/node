@@ -63,4 +63,8 @@ public class NodeVO {
     public void addChild(NodeVO child) {
         this.children.add(child);
     }
+
+    public void addAllChild(List<NodeVO> child) {
+        this.children.addAll(child);
+    }
 }

@@ -56,4 +56,5 @@ public class NodeChildrenVO {
     public void setHasChildren(Boolean hasChildren) {
         this.hasChildren = hasChildren;
     }
+
 }
