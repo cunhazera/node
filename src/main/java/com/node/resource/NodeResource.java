@@ -21,12 +21,12 @@ public class NodeResource {
     @Autowired
     private NodeService service;
 
-    @PostMapping(value = "/", produces = "application/json", consumes = "application/json")
+    @PostMapping(produces = "application/json", consumes = "application/json")
     public ResponseEntity create(@RequestBody NodeVO node) throws NodeNotFoundException {
         return new ResponseEntity(service.createNode(node).getId(), HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/", produces = "application/json")
+    @GetMapping(produces = "application/json")
     public ResponseEntity findAllNodes() {
         return new ResponseEntity(service.findAllNodes(), HttpStatus.OK);
     }
@@ -36,7 +36,7 @@ public class NodeResource {
         return new ResponseEntity(service.findAllByParent(id), HttpStatus.OK);
     }
 
-    @PutMapping(value = "/", produces = "application/json", consumes = "application/json")
+    @PutMapping(produces = "application/json", consumes = "application/json")
     public ResponseEntity updateNode(@RequestBody NodeVO node) throws NodeNotFoundException {
         return new ResponseEntity(service.update(node).getId(), HttpStatus.OK);
     }

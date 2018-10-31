@@ -12,6 +12,18 @@ public class NodeVO {
     private String detail;
     private List<NodeVO> children = new ArrayList<>();
 
+    public NodeVO() {
+
+    }
+
+    public NodeVO(Integer id, String code, String description, Integer parentId, String detail) {
+        this.id = id;
+        this.code = code;
+        this.description = description;
+        this.parentId = parentId;
+        this.detail = detail;
+    }
+
     public Integer getId() {
         return id;
     }

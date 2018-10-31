@@ -6,7 +6,7 @@
 	<groupId>com.node</groupId>
 	<artifactId>app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>app</name>
 	<description>Simple node CRUD</description>
@@ -69,6 +69,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
