@@ -17,8 +17,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-//@RunWith(SpringRunner.class)
-//@WebMvcTest(NodeResource.class)
+@RunWith(SpringRunner.class)
+@WebMvcTest(NodeResource.class)
 public class NodeResourceIT {
 
     @Autowired
@@ -27,7 +27,7 @@ public class NodeResourceIT {
     @MockBean
     private NodeResource nodeResource;
 
-    //@Test
+    @Test
     public void createNode() throws Exception {
 
         NodeVO node = new NodeVO();
@@ -36,13 +36,13 @@ public class NodeResourceIT {
         node.setCode("Code");
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("/api/node")
+                .post("api/app/node")
                 .content(new ObjectMapper().writeValueAsString(node))
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
         MockHttpServletResponse response = mvc.perform(requestBuilder).andReturn().getResponse();
-        MatcherAssert.assertThat(response.getStatus(), Matchers.equalTo(200));
+        MatcherAssert.assertThat(response.getStatus(), Matchers.equalTo(201));
     }
 
 }
