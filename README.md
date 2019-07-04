@@ -6,7 +6,7 @@ If you want to run this project locally:
  - Download the [Tomcat server](https://tomcat.apache.org/download-90.cgi)
  - Create a mysql database called `node` with user and password `root`.
    - Why am I exposing the user and password? Because this database will be created locally and all data will be also stored locally. If it were a remote dabase with sensitive data I'd surely keep the credentials in some env var.
- - `java -jar tar/app.jar`
+ - `java -jar target/app.jar`
 
 # URLs
 
