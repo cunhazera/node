@@ -34,7 +34,6 @@ public class NodeServiceTest {
 
     @TestConfiguration
     static class NodeServiceConfiguration {
-
         @Bean
         public NodeService nodeService() {
             return new NodeService();
